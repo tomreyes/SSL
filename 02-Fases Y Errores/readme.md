@@ -159,6 +159,50 @@ int i=42;
 
 **b. Investigar como en su entorno de desarrollo puede generar un programa ejecutable que se base en las dos unidades de traducción (i.e., archivos fuente, archivos con extensión .c). Luego generar ese ejecutable y probarlo.**
 
+A partir de estos 2 archivos fuente, podemos realizar un ejecutable de una forma muy sencilla: 
+
+```
+gcc studio 1.c hello8.c -o hello8
+```
+
+Al no tener un contrato entre studi1.c y hello8.c, y al usar la funcion printf sin el include de studi.h, apareceran 2 warnings, pero el .exe se generara correctamente
+
+Resultado:
+```
+La respuesta es 42
+```
 **c. Responder ¿qué ocurre si eliminamos o agregamos argumentos a la invocación de prontf? Justifique.**
 
+Dado que nuestra declaracion de prontf espera exactamente 2 parametros, cualquier otra cantidad hara que la compilacion falle 
+
+
 **d. Revisitar el punto anterior, esta vez utilizando un contrato de interfaz en un archivo header.**
+
+i. Escribir el contrato en studio.h.
+```c
+#ifndef _STUDIO_H_INCULDED_
+#define _STUDIO_H_INCULDED_
+void prontf(const char*, int);
+#endif
+```
+
+ii. Escribir hello9.c, un cliente que sí incluye el contrato.
+```c
+#include "studio.h" // Interfaz que importa
+int main(void){
+int i=42;
+ prontf("La respuesta es %d\n", i);
+}
+```
+
+iii. Escribir studio2.c, el proveedor que sí incluye el contrato.
+```c
+#include "studio.h" // Interfaz que exporta
+#include <stdio.h> // Interfaz que importa
+void prontf(const char* s, int i){
+ printf("La respuesta es %d\n", i);
+}
+```
+
+iv. Responder: ¿Qué ventaja da incluir el contrato en los clientes y en el
+proveedor.
