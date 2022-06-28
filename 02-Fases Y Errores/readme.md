@@ -92,7 +92,7 @@ Ensamblaremos y vincularemos esta nueva version:
 int printf(const char * restrict s, ...);
 int main(void){
  int i=42;
- prontf("La respuesta es %d\n")
+ printf("La respuesta es %d\n");
 }
 ```
 
@@ -109,7 +109,7 @@ Luego de este cambio, el .exe se genera sin mas problemas, pero al momento de ej
 int printf(const char * restrict s, ...);
 int main(void){
  int i=42;
- prontf("La respuesta es %d\n",i)
+ printf("La respuesta es %d\n",i);
 }
 ```
 
