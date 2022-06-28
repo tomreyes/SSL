@@ -23,7 +23,7 @@ c. Modificamos hello2.c para generar hello3.c
 int printf(const char * restrict s, ...);
 int main(void){
 int i=42;
- prontf("La respuesta es %d\n")
+ prontf("La respuesta es %d\n");
 ```
 
 d. Semantica de primera linea: Describe una funcion llamada printf, que retorna un valor de tipo entero y recibe una cantidad indeterminada de valores, con la condicion de que como minimo recibe un puntero a char constante.
@@ -56,7 +56,7 @@ b. Corregimos el error agregando la llave faltante:
 int printf(const char * restrict s, ...);
 int main(void){
  int i=42;
- prontf("La respuesta es %d\n")
+ prontf("La respuesta es %d\n");
 }
 ```
 c. Leer hello4.s, investigar sobrelenguajeensamblador,eindicardeformar sintética cual es el objetivo de ese código:
