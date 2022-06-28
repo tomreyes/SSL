@@ -39,7 +39,16 @@ Diferencias: En este caso, al no existir includes o comentario, los cambios entr
 
 ## 2. Compilacion:
 
+a. Compilar el resultado y generar hello3.s, no ensamblar:
 
+Ahora tenemos que compialr el .i obetenido anteriormente, para esto utilizaremos la opcion -S:
+```
+gcc -S hello3.c -o hello3.s
+```
+
+--- ERROR ---
+
+Como a la hora de compilar, el codigo que escribimos en C pasa a ser lenguaje maquina, los errores sintacticos del lenguaje van a evitar que podamos compilar el archivo. En este caso falto cerrar la llave del main.
 
 ## 3. Vinculación:
 
