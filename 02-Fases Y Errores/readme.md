@@ -204,5 +204,6 @@ void prontf(const char* s, int i){
 }
 ```
 
-iv. Responder: ¿Qué ventaja da incluir el contrato en los clientes y en el
-proveedor.
+iv. Responder: ¿Qué ventaja da incluir el contrato en los clientes y en el proveedor.
+
+Incluir el contrato nos da varias ventajas, nos quita los warnings declarar las funciones de forma implicita (esto puede ser muy importante si nuestro compilador falla en lugar de darnos warning), podemos encontrar errores en la libreria antes de compilar, y principalmete facilita el crecimiento del proyecto ya que los contratos se encargan del correcto uso de las librerias
